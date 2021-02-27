@@ -9,27 +9,35 @@ public class Pokedex : MonoBehaviour
     public GameObject pokedex;
     public GameObject btnPokedex;
 
+    [Header("Url Pokedex")]
     private string urlPokedex = "https://pokeapi.co/api/v2/pokemon?limit=10&offset=";
     private string urlComplete;
     private string offset;
     private int index;
 
-    //images
+    [Header("Url Images Pokedex")]
     private string urlImagesPokemons = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/"; // + 1.png
     private string urlCompleteImagesPokemons;
     private Texture2D texturePokemons;
 
+    [Header("Data - Logic")]
     private DataPokemons responsePokemonsGeneral;
     public RectTransform ParentPanel;
     private GameObject[] goButtonPokemons;
     private int cantDestroy;
     private string specificPokemon;
 
+    [Header("Panel Data Pokemons")]
+    public GameObject panelDataPokemons;
+    public GameObject buttonBackListPokemons;
+    private Texture2D textureSpecificPokemon;
+
+
     private void Start()
     {
         index = 0;
         offset = index.ToString();
-        StartCoroutine(GetPokemons());
+      //  StartCoroutine(GetPokemons());
     }
 
     public void NextList10()
@@ -162,13 +170,17 @@ public class Pokedex : MonoBehaviour
         pokedex.SetActive(true);
         btnPokedex.SetActive(false);
 
-        offset = "10";
+        offset = "0";
         StartCoroutine(GetPokemons());
 
     }
 
     public void ClosePokedex()
     {
+        index = 0;
+        offset = index.ToString();
+        DestroyAllButtons();
+
         pokedex.SetActive(false);
         btnPokedex.SetActive(true);
     }
