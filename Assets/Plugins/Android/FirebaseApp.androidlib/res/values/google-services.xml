@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id" xmlns:tools="http://schemas.android.com/tools">
+  <string name="gcm_defaultSenderId" translatable="false">735302588854</string>
+  <string name="google_storage_bucket" translatable="false">fir-unitynediar.appspot.com</string>
+  <string name="project_id" translatable="false">fir-unitynediar</string>
+  <string name="google_api_key" translatable="false">AIzaSyDxlxFxzIYsMXKnmEziuaUyiReZBzLbZ64</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDxlxFxzIYsMXKnmEziuaUyiReZBzLbZ64</string>
+  <string name="google_app_id" translatable="false">1:735302588854:android:a9b9f21ca288583ef4c917</string>
+  <string name="default_web_client_id" translatable="false">735302588854-l7efblqcnlpqiaifs2fdadu805heru77.apps.googleusercontent.com</string>
+</resources>
