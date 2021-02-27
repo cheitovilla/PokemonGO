@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Firebase;
 using Firebase.Auth;
 using System;
+using UnityEngine.SceneManagement;
 
 
 public class Login : MonoBehaviour
@@ -31,8 +32,6 @@ public class Login : MonoBehaviour
 
     private void Awake()
     {
-        //This already happens in the background. When you open the application you need to check if auth.CurrentUser !=null and if so just skip the login screen.
-
         //check all necessary dependecies 
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
         {
@@ -48,17 +47,15 @@ public class Login : MonoBehaviour
         });
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public void InitializeFirebase()
     {
-        //verificar 
         Debug.Log("Setting Firebase");
         auth = FirebaseAuth.DefaultInstance;
+
+        if (auth.CurrentUser != null)
+        {
+            SceneManager.LoadScene("AR");
+        }
     }
 
     public void LoginButton()
@@ -110,7 +107,7 @@ public class Login : MonoBehaviour
             Debug.LogFormat("User in succefully: {0} ({1}) ", user.DisplayName, user.Email);
             warningLogLoginText.text = "";
             confirmLoginText.text = "Logged In";
-            //cargar la siguiente escena
+            SceneManager.LoadScene("AR");
         }
     }
 
