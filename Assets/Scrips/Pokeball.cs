@@ -54,13 +54,16 @@ public class Pokeball : MonoBehaviour
         if (randomCatched())
         {
             Debug.Log("lo atrape");
+            Destroy(this.gameObject);
+            Destroy(Pokemon);
+            AR.instance.PickNamePokemon();
         }
         else
         {
             Debug.Log("F");
             Destroy(this.gameObject);
             Pokemon.SetActive(true);
-            AR.instance.InstanciatePokeball();
+            AR.instance.InstanciatePokeballAndPokemon();
         }
 
     }
