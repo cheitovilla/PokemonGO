@@ -13,7 +13,7 @@ public class AR : MonoBehaviour
     public GameObject parentPokemon;
     public GameObject pokemon;
 
-    private string urlTenPokemons = "https://pokeapi.co/api/v2/pokemon?limit=10&offset=0";
+    private string url20Pokemons = "https://pokeapi.co/api/v2/pokemon";
     private DataPokemons responsePokemonsGeneral;
     private List<string> listPokemon;
     private List<string> listAct;
@@ -52,7 +52,7 @@ public class AR : MonoBehaviour
 
     public IEnumerator GetNamePokemon()
     {
-        UnityWebRequest www = UnityWebRequest.Get(urlTenPokemons);
+        UnityWebRequest www = UnityWebRequest.Get(url20Pokemons);
         www.timeout = 10;
 
         yield return www.SendWebRequest();
