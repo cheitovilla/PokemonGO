@@ -319,6 +319,18 @@ public class Pokedex : MonoBehaviour
         Destroy(txtLocation.gameObject);
     }
 
+    //aqui podemos instancear
+    public void Testr()
+    {
+        if (DefaultTrackableEventHandler.instance.wached)
+        {
+            Debug.Log("si accedo");
+        }
+        else
+        {
+            Debug.Log("no accedo");
+        }
+    }
 
 
     public void OpenPokedex()
